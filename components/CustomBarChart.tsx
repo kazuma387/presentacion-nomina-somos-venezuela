@@ -21,26 +21,26 @@ const CustomBarChart: React.FC<Props> = ({ data }) => {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#cbd5e1" strokeOpacity={0.6} />
-            <XAxis 
-              dataKey="name" 
-              tick={{ fontSize: 12, fill: '#334155', fontWeight: 500 }} 
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: 12, fill: '#334155', fontWeight: 500 }}
               interval={0}
               // Adjust angle based on screen size is hard in SVG, but the responsive container handles scaling
               textAnchor="end"
               angle={-15}
               height={60}
             />
-            <YAxis 
-              tick={{ fontSize: 12, fill: '#334155' }} 
+            <YAxis
+              tick={{ fontSize: 12, fill: '#334155' }}
               axisLine={false}
               tickLine={false}
             />
-            <Tooltip 
+            <Tooltip
               cursor={{ fill: 'rgba(59, 130, 246, 0.1)' }}
               contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '12px' }}
             />
             <Legend wrapperStyle={{ paddingTop: '10px' }} />
-            <Bar dataKey="value" name="Participantes" radius={[6, 6, 0, 0]} barSize={60}>
+            <Bar dataKey="value" name="Brigadistas" radius={[6, 6, 0, 0]} barSize={60}>
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
